@@ -10,8 +10,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Checkout lively.next
+        uses: actions/checkout@v3
+        with:
+          repository: LivelyKernel/lively.next
+          ref: be9fcd4905b6fea10c4efaa42d2363dbdc33e98b
+      - run: pwd
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -20,5 +24,13 @@ jobs:
         run: |
           chmod a+x ./install.sh
           ./install.sh
+      - name: Checkout Project Repository
+        uses: actions/checkout@v3
+        with:
+          path: projects/test
+      - run: pwd
+      - run: cd ..
+      - run: cd ..
+      - run: pwd
       - name: Run CI Test Script 
-        run:  ./scripts/ci-tests.sh
+        run:  node /scripts/test.js test
