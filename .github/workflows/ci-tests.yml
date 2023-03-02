@@ -28,9 +28,5 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: projects/test
-      - run: pwd
-      - run: cd ..
-      - run: cd ..
-      - run: pwd
       - name: Run CI Test Script 
-        run:  node /scripts/test.js test
+        run:  node ./scripts/test.js test
