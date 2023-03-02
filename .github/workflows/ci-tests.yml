@@ -35,4 +35,4 @@ jobs:
           # wait until server is guaranteed to be running
           sleep 30
       - name: Run CI Test Script 
-        run:  node ./scripts/test.js test
+        run:  ./scripts/test.sh test
