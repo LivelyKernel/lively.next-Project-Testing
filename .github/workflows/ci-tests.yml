@@ -28,5 +28,11 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: projects/test
+      - name: Start livey.next
+        run: |
+          chmod a+x ./start.sh
+          ./start.sh > /dev/null 2>&1 &
+          # wait until server is guaranteed to be running
+          sleep 30
       - name: Run CI Test Script 
         run:  node ./scripts/test.js test
