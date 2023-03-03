@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: LivelyKernel/lively.next
-          ref: 4919f3e04c2b495309bea0d5740f15d7b53dbdae
+          ref: bc12a0778e4a02533265b3c3c859fed0dcc42dd2
       - run: pwd
       - name: Setup node
         uses: actions/setup-node@v2
